@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "dev-6d4f"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "dev-6d4f"
+  template:
+    metadata:
+      labels:
+        app: "dev-6d4f"
+    spec:
+      containers:
+        - name: "dev-6d4f"
+          image: "dev01registry.azurecr.io/dev"
+          ports:
+          - containerPort: 80
